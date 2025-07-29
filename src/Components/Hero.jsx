@@ -19,21 +19,22 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-30 text-center text-white px-4 animate-slideFadeUp">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-wide mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 drop-shadow-lg">
-          KROSSKRAFT
-        </h1>
+  <h1 className="text-[clamp(2.8rem,6vw,4.5rem)] font-extrabold tracking-wide mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 drop-shadow-lg leading-tight">
+    KROSSKRAFT
+  </h1>
 
-        <p className="text-lg md:text-xl text-gray-300 mb-8 italic tracking-wide">
-          Filmmaker • Director • Storyteller  •  Content Creator
-        </p>
+  <p className="text-[clamp(1rem,2.2vw,1.5rem)] text-gray-300 mb-8 italic tracking-wide">
+    Filmmaker • Director • Storyteller • Content Creator
+  </p>
 
-        <a
-          href="#portfolio"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-pink-500/40 transition-all duration-300"
-        >
-          View Portfolio
-        </a>
-      </div>
+  <a
+    href="#portfolio"
+    className="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-pink-500/40 transition-all duration-300"
+  >
+    View Portfolio
+  </a>
+</div>
+
 
       {/* Animations */}
       <style>{`
