@@ -24,7 +24,7 @@ export default function Hero() {
   </h1>
 
   <p className="text-[clamp(1rem,2.2vw,1.5rem)] text-gray-300 mb-8 italic tracking-wide">
-    Filmmaker • Director • Storyteller • Content Creator
+    Filmmaker • Director • Storyteller 
   </p>
 
   <a
