@@ -7,6 +7,7 @@ import Portfolio from './Components/Portfolio';
 import CareerHighlights from './Components/CareerHighlights';
 import Training from './Components/Training';
 import ClientsCollaborations from './Components/Clients';
+import Footer from './Components/Footer';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <CareerHighlights/>
       <Training/>
       <ClientsCollaborations/>
+      <Footer/>
     </>
   )
 }
