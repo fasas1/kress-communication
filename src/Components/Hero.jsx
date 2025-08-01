@@ -27,12 +27,12 @@ export default function Hero() {
     Filmmaker • Director • Storyteller 
   </p>
 
-  <a
+  {/* <a
     href="#portfolio"
     className="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-pink-500/40 transition-all duration-300"
   >
     View Portfolio
-  </a>
+  </a> */}
 </div>
 
 

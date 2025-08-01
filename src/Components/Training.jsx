@@ -21,7 +21,7 @@ export default function Training() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-black via-[#0d0d0d] to-black text-white py-24 px-6 overflow-hidden">
+    <section id="training" className="relative bg-gradient-to-b from-black via-[#0d0d0d] to-black text-white py-24 px-6 overflow-hidden">
       {/* Ambient Glow Effects */}
       <div className="absolute top-16 left-0 w-72 h-72 bg-pink-500/20 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-16 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[120px] -z-10"></div>
