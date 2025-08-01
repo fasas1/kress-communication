@@ -1,6 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  --color-primary: #EC4899;
+  --color-secondary: #8B5CF6;
+  --color-accent: #38BDF8;
+  --color-dark: #0F0F0F;
+  --color-light: #D1D5DB;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
