@@ -11,7 +11,7 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Home", href: "#hero" },
+
     { name: "About", href: "#about" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Career", href: "#career" },
