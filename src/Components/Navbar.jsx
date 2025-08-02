@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,11 +29,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <a
-            href="#hero"
-            className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-transparent bg-clip-text"
-          >
-            KROSSKRAFT
+          <a href="#hero" className="flex items-center space-x-2">
+            <img
+              src="./assets/logo.png"
+              alt="Krosskraft Logo"
+              className="w-43 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-md"
+            />
           </a>
 
           {/* Desktop Menu */}
