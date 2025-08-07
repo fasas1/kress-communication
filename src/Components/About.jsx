@@ -29,9 +29,7 @@ export default function About() {
             <br /><br />
             As the Owner and Lead Creative at <strong className="text-blue-400">KROSSKRAFT COMMUNICATIONS</strong>, I’ve helmed iconic campaigns and original formats for multinationals and premium Nigerian brands—delivering end-to-end mastery: from ideation and scripting to casting, directing, editing, and final delivery.
           </p>
-          <button className="px-6 py-3 mt-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white text-sm font-semibold tracking-wider shadow-lg hover:scale-105 hover:shadow-pink-500/40 transition-all duration-300">
-            Learn More
-          </button>
+       
         </div>
 
         {/* Image Section */}
