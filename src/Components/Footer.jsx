@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
-            KROSSKRAFT COMMUNICATION
+            KROSSKRAFT COMMUNICATIONS
           </h2>
           <p className="text-sm mt-2 text-gray-400">
             Capturing stories, creating magic.

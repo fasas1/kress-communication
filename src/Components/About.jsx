@@ -38,7 +38,7 @@ export default function About() {
         <div className="w-full animate-slide-in flex justify-center relative">
           <div className="relative w-[95%] max-w-[500px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             <img
-              src="/assets/Owolabi@2x.png"
+              src="/assets/Owo@2x.jpeg"
               alt="Creative Director Toks"
               className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110"
             />

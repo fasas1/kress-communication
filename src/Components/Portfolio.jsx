@@ -6,7 +6,7 @@ export default function Portfolio() {
       title: "TV Commercials",
       description:
         "Directed high-profile campaigns for Delta Soap, Devon Soap, Procold, Passion Energy Drink, Gynsomin Multivitamins, Coatal Soft gel, Amino Pep and more—delivering crisp storytelling with visual flair, even under tight schedules and budgets.",
-      image: "/assets/1.jpeg",
+      image: "/assets/9.jpeg",
     },
     {
       title: "Branded Content & Reality TV",
@@ -15,22 +15,23 @@ export default function Portfolio() {
       image: "/assets/2.jpeg",
     },
     {
+      title: "Script Development & Creative Direction",
+      description:
+        "From biopics to training videos and documentaries, I bring a broadcast journalist’s mind and a director’s eye to every story.",
+      image: "/assets/8.jpeg",
+    },
+    {
       title: "Corporate & Political Documentaries",
       description:
         "Produced and directed impactful narratives for Unilever, First Bank, British America Tobacco (BAT), Coca-Cola, Exxon Mobil and government agencies.",
       image: "/assets/3.jpeg",
     },
-    {
-      title: "Script Development & Creative Direction",
-      description:
-        "From biopics to training videos and documentaries, I bring a broadcast journalist’s mind and a director’s eye to every story.",
-      image: "/assets/4.jpeg",
-    },
+    
     {
       title: "Radio Jingles",
       description:
         "Creative and production direction for radio campaigns that amplify brand messaging through captivating audio storytelling.",
-      image: "/assets/2.jpeg",
+      image: "/assets/7.jpeg",
     },
   ];
 
