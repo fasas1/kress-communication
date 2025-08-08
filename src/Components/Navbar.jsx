@@ -13,6 +13,7 @@ export default function Navbar() {
   const menuItems = [
 
     { name: "About", href: "#about" },
+       { name: "Gallery", href: "#gallery" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Career", href: "#career" },
     { name: "Training", href: "#training" },

@@ -22,6 +22,10 @@ export default function Footer() {
           </div>
           <div className="flex items-center space-x-2 hover:text-blue-400 transition">
             <i className="fas fa-envelope"></i>
+            <span>info@krosskraftcommunications.com</span>
+          </div>
+            <div className="flex items-center space-x-2 hover:text-blue-400 transition">
+            <i className="fas fa-envelope"></i>
             <span>owomoney@yahoo.co.uk</span>
           </div>
           <div className="flex items-center space-x-2 hover:text-yellow-400 transition">

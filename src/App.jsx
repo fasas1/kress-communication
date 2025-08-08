@@ -11,6 +11,7 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import WhatsAppFloat from './Components/WhatsappFloat';
 import ScrollToTop from './Components/ScrollToTop';
+import Gallery from './Components/Gallery';
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
       <Hero/>
        <Navbar/>
       <About/>
-      <Portfolio/>
+      <Gallery/>
+      <Portfolio/>   
       <CareerHighlights/>
       <Training/>
       <ClientsCollaborations/>
