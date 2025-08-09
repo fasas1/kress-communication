@@ -1,152 +1,218 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaPlay, FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const projects = [
-  { title: "The Art of Sound", description: "A magnetic performance by Africa’s highlife king — every chord, every cheer, every heartbeat captured in vivid detail", image: "/assets/7.jpeg", aspect: "portrait" },
-  { title: "Live in Vibes", description: "Backstage and on stage — an intimate portrait of a musical icon shaping rhythms that transcend borders", image: "/assets/11.jpeg", aspect: "landscape" },
-  { title: "Wide Angle Moment", description: "A sweeping view that immerses you in the scale, the energy, and the electric unity of the event.", image: "/assets/9.jpeg", aspect: "landscape" },
-  { title: "Screen Elegance", description: "One of Nollywood’s most celebrated actresses — commanding presence, timeless elegance, and stories told with every glance.", image: "/assets/31.jpeg", aspect: "portrait" },
-  { title: "Electric Crowd", description: "Capturing the raw energy and passion of the crowd as the beat drops.", image: "/assets/12.jpeg", aspect: "landscape" },
-  { title: "Quiet Reflection", description: "A cinematic moment of solitude and thought, framed with natural light.", image: "/assets/13.jpeg", aspect: "portrait" },
-  { title: "City Lights", description: "Nighttime cityscape alive with color and movement — a visual symphony.", image: "/assets/20.jpeg", aspect: "landscape" },
-  { title: "Emotive Close-up", description: "An intimate look capturing raw emotion and story behind the eyes.", image: "/assets/10.jpeg", aspect: "portrait" },
-  { title: "Stage Drama", description: "Theatrical lighting and dramatic angles reveal hidden narratives.", image: "/assets/90.jpeg", aspect: "landscape" },
-  { title: "Golden Hour", description: "The magic of golden hour lighting transforms the scene into a dreamscape.", image: "/assets/3.jpeg", aspect: "landscape" },
-  { title: "Flow and Motion", description: "Blurring motion to evoke the rhythm and pace of the story.", image: "/assets/1.jpeg", aspect: "portrait" },
-  { title: "Silent Story", description: "A minimalist frame conveying a thousand words through silence.", image: "/assets/21.jpeg", aspect: "landscape" },
-  { title: "Electric Pulse", description: "The energy of the crowd pulsing with vibrant colors and lights.", image: "/assets/23.jpeg", aspect: "landscape" },
-  { title: "Dramatic Silhouette", description: "Silhouettes telling untold stories in the fading light.", image: "/assets/32.jpeg", aspect: "portrait" },
-  { title: "The Final Cut", description: "Behind the scenes moments capturing the essence of storytelling.", image: "/assets/26.jpeg", aspect: "landscape" },
-];
+export default function CinematicShowcase() {
+  const projects = [
+    // Your existing 4 projects
+    {
+      title: "The Art of Sound",
+      description: "A magnetic performance by Africa’s highlife king — every chord, every cheer, every heartbeat captured in vivid detail",
+      image: "/assets/7.jpeg",
+    },
+    {
+      title: "Live in Vibes",
+      description: "Backstage and on stage — an intimate portrait of a musical icon shaping rhythms that transcend borders",
+      image: "/assets/11.jpeg",
+    },
+    {
+      title: "Wide Angle Moment",
+      description: "A sweeping view that immerses you in the scale, the energy, and the electric unity of the event.",
+      image: "/assets/9.jpeg",
+    },
+    {
+      title: "Screen Elegance",
+      description: "One of Nollywood’s most celebrated actresses — commanding presence, timeless elegance, and stories told with every glance.",
+      image: "/assets/10.jpeg",
+    },
+  ];
 
-export default function CinematicGallery() {
-  const [modalIndex, setModalIndex] = useState(null);
+  // Additional images to show in the gallery modal
+  const extraImages = [
+     "/assets/41.jpeg",
+     "/assets/13.jpeg",
+      "/assets/32.jpeg",
+    "/assets/21.jpeg",
+    "/assets/22.jpeg",
+    "/assets/23.jpeg",
+    "/assets/26.jpeg",
+     "/assets/12.jpeg",
+    
+    "/assets/14.jpeg",
+    "/assets/20.jpeg",
+    "/assets/31.jpeg",
+   
+    "/assets/9.jpeg",
+    "/assets/1.jpeg",
+    "/assets/2.jpeg",
+    "/assets/3.jpeg",
+    "/assets/4.jpeg",
+      "/assets/40.jpeg",
+   
+    "/assets/42.jpeg",
+    "/assets/43.jpeg",
+    "/assets/44.jpeg",
 
-  const openModal = (index) => setModalIndex(index);
-  const closeModal = () => setModalIndex(null);
+  ];
 
-  const prevImage = () =>
-    setModalIndex((i) => (i === 0 ? projects.length - 1 : i - 1));
-  const nextImage = () =>
-    setModalIndex((i) => (i === projects.length - 1 ? 0 : i + 1));
+  // Modal state
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Open modal at specific image index
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setModalOpen(true);
+  };
+
+  // Navigation in modal
+  const prevImage = () => setCurrentIndex((i) => (i === 0 ? extraImages.length - 1 : i - 1));
+  const nextImage = () => setCurrentIndex((i) => (i === extraImages.length - 1 ? 0 : i + 1));
 
   return (
-    <section
-      id="gallery"
-      className="relative bg-gradient-to-b from-black via-[#0a0a0a] to-black text-white py-20 overflow-hidden"
-    >
-      {/* Cinematic Glow Background */}
-      <div className="absolute top-16 left-1/4 w-72 h-72 bg-pink-600/20 rounded-full blur-[120px] -z-10"></div>
-      <div className="absolute bottom-16 right-1/4 w-72 h-72 bg-purple-600/20 rounded-full blur-[120px] -z-10"></div>
+    <section className="relative bg-gradient-to-b from-black via-[#0a0a0a] to-black text-white py-24 px-6 overflow-hidden">
+      {/* Ambient glow */}
+      <div className="absolute top-20 left-0 w-72 h-72 bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-10 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-[120px] -z-10"></div>
 
-      {/* Content Wrapper */}
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading */}
+      {/* Section header */}
+      <div className="text-center mb-16">
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-5xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400"
+          className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400"
         >
-          Cinematic Gallery
+          Cinematic Showcase
         </motion.h2>
+        
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 1 }}
+          transition={{ delay: 0.2, duration: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 max-w-xl mx-auto mb-14 text-center italic"
+          className="text-gray-400 mt-3 text-base md:text-lg italic"
         >
-          A curated collection showcasing the emotion, artistry, and storytelling power of my work.
+          Selected scenes from my portfolio of moving stories.
         </motion.p>
+      </div>
 
-        {/* Grid Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              layout
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.15, duration: 0.6, ease: "easeOut" }}
-              className="relative rounded-lg overflow-hidden cursor-pointer group"
-              onClick={() => openModal(idx)}
-            >
+      {/* Showcase items */}
+      <div className="max-w-6xl mx-auto space-y-24">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 1 }}
+            viewport={{ once: true }}
+            className={`flex flex-col md:flex-row items-center gap-10 ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Image with cinematic hover */}
+            <div className="relative w-full md:w-1/2 group overflow-hidden rounded-lg shadow-lg">
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+                <FaPlay className="text-white text-3xl opacity-80 group-hover:scale-110 transition-transform" />
+              </div>
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full rounded-lg object-cover transition-transform duration-700 group-hover:scale-110 shadow-2xl shadow-pink-600/70"
-                loading="lazy"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-transparent to-transparent px-5 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-lg font-semibold text-pink-400">{project.title}</h3>
-                <p className="text-sm text-gray-300 line-clamp-2">{project.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              {/* Letterbox effect */}
+              <div className="absolute top-0 left-0 w-full h-10 bg-black"></div>
+              <div className="absolute bottom-0 left-0 w-full h-10 bg-black"></div>
+            </div>
+
+            {/* Text */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 mb-6">{project.description}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {modalIndex !== null && (
-          <motion.div
-            key="modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50 p-6"
-            onClick={closeModal}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-5xl w-full rounded-lg overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+      {/* New Thumbnail Gallery Section */}
+      <div className="max-w-6xl mx-auto mt-20">
+        <h4 className="text-xl font-semibold mb-6 text-center">More Scenes</h4>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {extraImages.slice(0, 4).map((src, i) => (
+            <button
+              key={i}
+              onClick={() => openModal(i)}
+              className="rounded-lg overflow-hidden border border-gray-700 hover:border-pink-500 transition"
+              aria-label={`View image ${i + 1}`}
             >
               <img
-                src={projects[modalIndex].image}
-                alt={projects[modalIndex].title}
-                className="w-full max-h-[80vh] object-contain bg-black"
+                src={src}
+                alt={`Extra scene ${i + 1}`}
+                className="w-full h-32 object-cover"
+                loading="lazy"
               />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/95 px-8 py-6">
-                <h3 className="text-3xl font-bold text-pink-500 tracking-wide">
-                  {projects[modalIndex].title}
-                </h3>
-                <p className="text-gray-300 mt-2">{projects[modalIndex].description}</p>
-              </div>
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={prevImage}
-                aria-label="Previous Image"
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-black bg-red-600 rounded-full p-3 hover:bg-red-700 transition"
-              >
-                ‹
-              </button>
-              <button
-                onClick={nextImage}
-                aria-label="Next Image"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-black bg-red-600 rounded-full p-3 hover:bg-red-700 transition"
-              >
-                ›
-              </button>
-
-              {/* Close Button */}
-              <button
-                onClick={closeModal}
-                aria-label="Close Modal"
-                className="absolute top-4 right-4 text-black bg-red-600 rounded-full p-2 hover:bg-red-700 transition"
-              >
-                ✕
-              </button>
-            </motion.div>
-          </motion.div>
+            </button>
+          ))}
+        </div>
+        {extraImages.length > 4 && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => openModal(0)}
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:opacity-90 transition-opacity"
+            >
+              View All Scenes
+            </button>
+          </div>
         )}
-      </AnimatePresence>
+      </div>
+
+      {/* Modal Carousel for Extra Images */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+          onClick={() => setModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative max-w-3xl w-full mx-4 rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-4 right-4 text-black text-3xl z-50"
+              aria-label="Close gallery"
+            >
+              <FaTimes />
+            </button>
+
+            <img
+              src={extraImages[currentIndex]}
+              alt={`Scene ${currentIndex + 1}`}
+              className="w-full max-h-[80vh] object-contain bg-black"
+            />
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevImage}
+              className="absolute top-1/2 left-2 transform -translate-y-1/2 text-black bg-black/50 p-2 rounded-full hover:bg-black/80"
+              aria-label="Previous image"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute top-1/2 right-2 transform -translate-y-1/2 text-black bg-black/50 p-2 rounded-full hover:bg-black/80"
+              aria-label="Next image"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
