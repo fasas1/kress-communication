@@ -22,8 +22,8 @@ function App() {
       <Hero/>
        <Navbar/>
       <About/>
-      <Gallery/>
-      <Portfolio/>   
+      <Portfolio/>
+      <Gallery/>   
       <CareerHighlights/>
       <Training/>
       <ClientsCollaborations/>

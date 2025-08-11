@@ -70,7 +70,7 @@ export default function CinematicShowcase() {
   const nextImage = () => setCurrentIndex((i) => (i === extraImages.length - 1 ? 0 : i + 1));
 
   return (
-    <section className="relative bg-gradient-to-b from-black via-[#0a0a0a] to-black text-white py-24 px-6 overflow-hidden">
+    <section id="gallery" className="relative bg-gradient-to-b from-black via-[#0a0a0a] to-black text-white py-24 px-6 overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-20 left-0 w-72 h-72 bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-10 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-[120px] -z-10"></div>
